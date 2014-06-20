@@ -4,40 +4,40 @@ Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 <br>
 ### db.collection.save()
 
-<img src="https://github.com/Jalalhejazi/jsonfs/images/db.save.png" alt="">
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/db.save.png" alt="">
 
 <br>
 ### db.collection.findOne()
-<img src="https://github.com/Jalalhejazi/jsonfs/images/db.findOne.png" alt="">
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/db.findOne.png" alt="">
 
 
 <br>
 ### db.collection.find({})
-<img src="https://github.com/Jalalhejazi/jsonfs/images/db.find.png" alt="">
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/db.find.png" alt="">
 
 
 <br>
 ### db.collection.update({})
-<img src="https://github.com/Jalalhejazi/jsonfs/images/db.update.png" alt="">
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/db.update.png" alt="">
 
 <br>
 ### db.collection.remove({})
-<img src="https://github.com/Jalalhejazi/jsonfs/images/db.remove.png" alt="">
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/db.remove.png" alt="">
 
 <br>
 ### db.kursus
-<img src="https://github.com/Jalalhejazi/jsonfs/images/jsonfs-kursus.png" alt="">
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/jsonfs-kursus.png" alt="">
 
 
 
 <br>
 ### node try.js
-<img src="https://github.com/Jalalhejazi/jsonfs/images/try.png" alt="">
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/try.png" alt="">
 
 
 <br>
 ### collection.js (Data Access Layer)
-<img src="https://github.com/Jalalhejazi/jsonfs/images/collection.js.png" alt="">
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/collection.js.png" alt="">
 
 
 
