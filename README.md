@@ -1,4 +1,4 @@
-# jsonfs (JSON FileDB like MongoDB)
+# json_file_system (JSON FileDB like MongoDB)
 Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 
 <br>
@@ -70,15 +70,23 @@ clone the source code locally :
 $ git clone https://github.com/Jalalhejazi/jsonfs.git
 ```
 
-Install the module locally :
+Install the module globally :
+
 ```bash
-$ npm install json_file_system
+$ npm install json_file_system -g
 ```
 
 ```js
-var db = require('jsonfs');
+// to use the globally installed use: json_file_system
+// to use the locally from git use: lib/jsonfs.js
+
+var db = require('json_file_system');
+
 db = db.connect('/path/to/db-folder', ['collection-name']);
+
 // you can access the traditional JSON DB methods here
+db.connect('','');
+
 ```
 
 ## Documentation
@@ -89,7 +97,7 @@ db.connect(pathToFolder, ['filename']);
 Filename will be the name of the JSON file. You can omit the extension, jsonfs will take care of it for you.
 
 ```js
-var db = require('jsonfs');
+var db = require('json_file_system');
 db = db.connect('/demos/db', ['articles']);
 // or simply
 db.connect('/demos/db', ['articles']);
