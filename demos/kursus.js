@@ -1,4 +1,4 @@
-var db = require('../lib/JSONFS.js');
+var db = require('../lib/jsonfs.js');
 
 db.connect('db', ['kursus']);
 

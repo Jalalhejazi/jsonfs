@@ -1,8 +1,8 @@
 // in release mode:
-// npm install JSONFS
-// var db = require('JSONFS');
+// npm install jsonfs
+// var db = require('jsonfs');
 
-var db = require('../lib/JSONFS.js');
+var db = require('../lib/jsonfs.js');
 
 db.connect('db', ['articles']);
 

@@ -1,12 +1,12 @@
 // in release mode:
-// npm install JSONFS
-// var db = require('JSONFS');
+// npm install jsonfs
+// var db = require('jsonfs');
 
-var db = require('../lib/JSONFS.js');
+var db = require('../lib/jsonfs.js');
 
 db.connect('db', ['articles']);
 var article = {
-    title : 'JSONFS works',
+    title : 'jsonfs works',
     published : 'today',
     rating : '5 stars'
 }
@@ -30,11 +30,11 @@ console.log(foundArticles);
 
 //update
 var query = {
-	title : 'JSONFS works'
+	title : 'jsonfs works'
 };
 
 var dataToBeUpdate = {
-	title : 'JSONFS works again!',
+	title : 'jsonfs works again!',
 };
 
 var options = {

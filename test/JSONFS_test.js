@@ -1,6 +1,6 @@
 'use strict';
 
-var JSONFS = require('../lib/JSONFS.js');
+var jsonfs = require('../lib/jsonfs.js');
 var fs = require('fs');
 
 /*
@@ -27,11 +27,11 @@ var dbPath = 'test/db',
     collection = ['articles'],
     collections = ['comments', 'rating'],
     article = {
-        title: 'JSONFS works',
+        title: 'jsonfs works',
         published: 'today'
     },
     article2 = {
-        title: 'JSONFS works',
+        title: 'jsonfs works',
         published: 'yesterday'
     };
 
@@ -47,29 +47,29 @@ exports.connectNload = {
     },
     'connect : ': function(test) {
         test.expect(1);
-        test.equal(typeof(JSONFS.connect(dbPath, collection)[collection[0]]), 'object',
+        test.equal(typeof(jsonfs.connect(dbPath, collection)[collection[0]]), 'object',
             'Successfully Connected and collection instantiated');
         test.done();
     },
     'loadCollections : ': function(test) {
         test.expect(3);
         // connect to DB
-        JSONFS.connect(dbPath);
+        jsonfs.connect(dbPath);
         // load single collecion
-        test.equal(JSONFS.loadCollections(collection)[collection[0]].collectionName, collection[0],
+        test.equal(jsonfs.loadCollections(collection)[collection[0]].collectionName, collection[0],
             'Loading single collection');
         //load multiple collections
-        test.equal(JSONFS.loadCollections(collections)[collections[0]].collectionName, collections[
+        test.equal(jsonfs.loadCollections(collections)[collections[0]].collectionName, collections[
             0], 'Loading multiple collection');
-        test.equal(JSONFS.loadCollections(collections)[collections[1]].collectionName, collections[
+        test.equal(jsonfs.loadCollections(collections)[collections[1]].collectionName, collections[
             1], 'Loading multiple collection');
         test.done();
     },
     tearDown: function(callback) {
         // remove collections
-        JSONFS.loadCollections(collections);
-        JSONFS[collections[0]].remove();
-        JSONFS[collections[1]].remove();
+        jsonfs.loadCollections(collections);
+        jsonfs[collections[0]].remove();
+        jsonfs[collections[1]].remove();
         callback();
     },
 };
@@ -80,21 +80,21 @@ exports.count = {
         if (!fs.existsSync(dbPath)) {
             fs.mkdirSync(dbPath);
         }
-        // init JSONFS
-        JSONFS.connect(dbPath, collection);
+        // init jsonfs
+        jsonfs.connect(dbPath, collection);
         // remove articles collection
-        JSONFS.articles.remove();
+        jsonfs.articles.remove();
         //reinit the collection
-        JSONFS.loadCollections(collection);
+        jsonfs.loadCollections(collection);
 
         done();
     },
     'count : ': function(test) {
         test.expect(2);
-        test.equal(JSONFS.articles.count(), 0, 'Count should be 0');
-        JSONFS.articles.save(article);
-        JSONFS.articles.save(article2);
-        test.equal(JSONFS.articles.count(), 2, 'Count should be 2');
+        test.equal(jsonfs.articles.count(), 0, 'Count should be 0');
+        jsonfs.articles.save(article);
+        jsonfs.articles.save(article2);
+        test.equal(jsonfs.articles.count(), 2, 'Count should be 2');
         test.done();
     },
 };
@@ -105,28 +105,28 @@ exports.saveData = {
         if (!fs.existsSync(dbPath)) {
             fs.mkdirSync(dbPath);
         }
-        // init JSONFS
-        JSONFS.connect(dbPath, collection);
+        // init jsonfs
+        jsonfs.connect(dbPath, collection);
         // remove articles collection
-        JSONFS.articles.remove();
+        jsonfs.articles.remove();
         //reinit the collection
-        JSONFS.loadCollections(collection);
+        jsonfs.loadCollections(collection);
 
         done();
     },
     'save : ': function(test) {
         test.expect(2);
-        test.equal(JSONFS.articles.count(), 0, 'No records before save');
-        test.equal(JSONFS.articles.save(article).title, article.title,
+        test.equal(jsonfs.articles.count(), 0, 'No records before save');
+        test.equal(jsonfs.articles.save(article).title, article.title,
             'One record should get saved');
         test.done();
     },
 
     'save multiple: ': function(test) {
         test.expect(3);
-        test.equal(JSONFS.articles.count(), 0, 'No records before save');
-        test.equal(JSONFS.articles.save([article]).length, 1, 'One record should get saved');
-        test.equal(JSONFS.articles.save([article, article2]).length, 2,
+        test.equal(jsonfs.articles.count(), 0, 'No records before save');
+        test.equal(jsonfs.articles.save([article]).length, 1, 'One record should get saved');
+        test.equal(jsonfs.articles.save([article, article2]).length, 2,
             'Two records should get saved');
         test.done();
     },
@@ -138,28 +138,28 @@ exports.findAll = {
         if (!fs.existsSync(dbPath)) {
             fs.mkdirSync(dbPath);
         }
-        // init JSONFS
-        JSONFS.connect(dbPath, collection);
+        // init jsonfs
+        jsonfs.connect(dbPath, collection);
         // remove articles collection
-        JSONFS.articles.remove();
+        jsonfs.articles.remove();
         //reinit the collection
-        JSONFS.loadCollections(collection);
+        jsonfs.loadCollections(collection);
         done();
     },
 
     'findAll : ': function(test) {
         test.expect(3);
         //save two record
-        JSONFS.articles.save(article);
-        JSONFS.articles.save(article2);
+        jsonfs.articles.save(article);
+        jsonfs.articles.save(article2);
 
-        test.equal(JSONFS.articles.find().length, 2, 'Should find two records');
+        test.equal(jsonfs.articles.find().length, 2, 'Should find two records');
         // find with a query
-        test.equal(JSONFS.articles.find({
-            title: 'JSONFS works'
+        test.equal(jsonfs.articles.find({
+            title: 'jsonfs works'
         }).length, 2, 'Should find two records with query');
         // no record should be returned when the query does not match any records
-        test.equal(JSONFS.articles.find({
+        test.equal(jsonfs.articles.find({
             title: 'dummy text'
         }).length, 0, 'Should find no records');
 
@@ -173,29 +173,29 @@ exports.findOne = {
         if (!fs.existsSync(dbPath)) {
             fs.mkdirSync(dbPath);
         }
-        // init JSONFS
-        JSONFS.connect(dbPath, collection);
+        // init jsonfs
+        jsonfs.connect(dbPath, collection);
         // remove articles collection
-        JSONFS.articles.remove();
+        jsonfs.articles.remove();
         //reinit the collection
-        JSONFS.loadCollections(collection);
+        jsonfs.loadCollections(collection);
         done();
     },
 
     'findOne : ': function(test) {
-        var query = 'JSONFS works';
+        var query = 'jsonfs works';
         test.expect(3);
         //save two record
-        JSONFS.articles.save(article);
-        JSONFS.articles.save(article2);
+        jsonfs.articles.save(article);
+        jsonfs.articles.save(article2);
 
-        test.equal(JSONFS.articles.findOne().published, 'today', 'Should return the first record');
+        test.equal(jsonfs.articles.findOne().published, 'today', 'Should return the first record');
         // find with a query
-        test.equal(JSONFS.articles.findOne({
+        test.equal(jsonfs.articles.findOne({
             title: query
         }).title, query, 'Should find One record on query');
         // no record should be returned when the query does not match any records
-        test.equal(JSONFS.articles.find({
+        test.equal(jsonfs.articles.find({
             title: 'dummy text'
         }).title, undefined, 'No records should be found');
 
@@ -209,12 +209,12 @@ exports.update = {
         if (!fs.existsSync(dbPath)) {
             fs.mkdirSync(dbPath);
         }
-        // init JSONFS
-        JSONFS.connect(dbPath, collection);
+        // init jsonfs
+        jsonfs.connect(dbPath, collection);
         // remove articles collection
-        JSONFS.articles.remove();
+        jsonfs.articles.remove();
         //reinit the collection
-        JSONFS.loadCollections(collection);
+        jsonfs.loadCollections(collection);
         done();
     },
 
@@ -229,12 +229,12 @@ exports.update = {
 
         test.expect(4);
         //save one record
-        JSONFS.articles.save(article);
+        jsonfs.articles.save(article);
         // before update
-        test.equal(JSONFS.articles.findOne().published, article.published,
+        test.equal(jsonfs.articles.findOne().published, article.published,
             'Should return the same record as inserted');
         // after update
-        test.equal(JSONFS.articles.update(query, article2, options).updated, 1,
+        test.equal(jsonfs.articles.update(query, article2, options).updated, 1,
             'Should return the updated objects count');
 
         //change options
@@ -246,7 +246,7 @@ exports.update = {
             'upsert': true
         };
         // should insert
-        test.equal(JSONFS.articles.update(query, article2, options).inserted, 1,
+        test.equal(jsonfs.articles.update(query, article2, options).inserted, 1,
             'Should return the inserted objects count');
 
         //change options
@@ -260,7 +260,7 @@ exports.update = {
         };
 
         // should update 2 record
-        test.equal(JSONFS.articles.update(query, article, options).updated, 2,
+        test.equal(jsonfs.articles.update(query, article, options).updated, 2,
             'Should return the updated objects count');
         test.done();
     },
@@ -272,57 +272,57 @@ exports.remove = {
         if (!fs.existsSync(dbPath)) {
             fs.mkdirSync(dbPath);
         }
-        // init JSONFS
-        JSONFS.connect(dbPath, collection);
+        // init jsonfs
+        jsonfs.connect(dbPath, collection);
         // remove articles collection
-        JSONFS.articles.remove();
+        jsonfs.articles.remove();
         //reinit the collection
-        JSONFS.loadCollections(collection);
+        jsonfs.loadCollections(collection);
         done();
     },
 
     'remove : ': function(test) {
         test.expect(9);
         //save two record
-        JSONFS.articles.save(article);
-        JSONFS.articles.save(article);
-        JSONFS.articles.save(article2);
+        jsonfs.articles.save(article);
+        jsonfs.articles.save(article);
+        jsonfs.articles.save(article2);
 
         //before deletion
-        test.equal(JSONFS.articles.count(), 3, 'There should be 3 records in the collection');
+        test.equal(jsonfs.articles.count(), 3, 'There should be 3 records in the collection');
         //deletion -- default true
-        test.equal(JSONFS.articles.remove({
+        test.equal(jsonfs.articles.remove({
             'published': 'today'
         }), true, 'Deletion should be successful');
         //after deletion
-        test.equal(JSONFS.articles.count(), 1, 'There should be 1 record in the collection');
+        test.equal(jsonfs.articles.count(), 1, 'There should be 1 record in the collection');
 
         //repopulate data
-        JSONFS.articles.save(article);
-        JSONFS.articles.save(article);
+        jsonfs.articles.save(article);
+        jsonfs.articles.save(article);
 
         //deletion -- default true
-        test.equal(JSONFS.articles.remove({
+        test.equal(jsonfs.articles.remove({
             'published': 'today'
         }, true), true, 'Deletion should be successful');
         //after deletion
-        test.equal(JSONFS.articles.count(), 1, 'There should be 1 record in the collection');
+        test.equal(jsonfs.articles.count(), 1, 'There should be 1 record in the collection');
 
         //repopulate data
-        JSONFS.articles.save(article);
-        JSONFS.articles.save(article);
+        jsonfs.articles.save(article);
+        jsonfs.articles.save(article);
 
         //deletion -- default true
-        test.equal(JSONFS.articles.remove({
+        test.equal(jsonfs.articles.remove({
             'published': 'today'
         }, false), true, 'Deletion should be successful');
         //after deletion
-        test.equal(JSONFS.articles.count(), 2, 'There should be 2 records in the collection');
+        test.equal(jsonfs.articles.count(), 2, 'There should be 2 records in the collection');
 
         //remove the collection completely
-        test.equal(JSONFS.articles.remove(), true, 'Deletion should be successful');
+        test.equal(jsonfs.articles.remove(), true, 'Deletion should be successful');
         //the collection should not exist any more
-        test.equal(JSONFS.articles, undefined, 'collection should be removed');
+        test.equal(jsonfs.articles, undefined, 'collection should be removed');
         test.done();
     },
 };

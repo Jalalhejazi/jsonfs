@@ -1,5 +1,5 @@
 // Check the processing time for each of the DB operations with load
-var db = require('../lib/JSONFS.js');
+var db = require('../lib/jsonfs.js');
 var fs = require('fs');
 db.connect('db', ['articles']);
 
@@ -15,7 +15,7 @@ var x = 1;
 var articles = [];
 for (var i = 0; i < x; i++) {
     articles.push({
-        title: 'JSONFS works ' + i,
+        title: 'jsonfs works ' + i,
         published: 'today ' + i,
         rating: '5 stars ' + i
     });
@@ -52,9 +52,9 @@ console.timeEnd(x+' : Find One with query');
 
 console.time(x+' : Update');
 var resp = db.articles.update({
-    title: 'JSONFS works'
+    title: 'jsonfs works'
 }, {
-    title: 'JSONFS is awesome'
+    title: 'jsonfs is awesome'
 });
 //console.log('update : ' , resp);
 console.timeEnd(x+' : Update');

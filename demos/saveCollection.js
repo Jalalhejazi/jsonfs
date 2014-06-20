@@ -1,20 +1,20 @@
-var db = require('../lib/JSONFS.js');
+var db = require('../lib/jsonfs.js');
 
 db.connect('db', ['articles']);
 var article = {
-    title : 'JSONFS works',
+    title : 'jsonfs works',
     published : 'today',
     rating : '5 stars'
 }
 
 var article2 = {
-    title : 'JSONFS works',
+    title : 'jsonfs works',
     published : 'yesterday',
     rating : '5 stars'
 }
 
 var article3 = {
-    title : 'JSONFS works',
+    title : 'jsonfs works',
     published : 'today',
     rating : '4 stars'
 }

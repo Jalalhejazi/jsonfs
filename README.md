@@ -1,4 +1,4 @@
-# JSONFS (JSON FileDB like MongoDB)
+# jsonfs (JSON FileDB like MongoDB)
 Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 
 <br>
@@ -26,7 +26,7 @@ Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 
 <br>
 ### db.kursus
-<img src="images/JSONFS-kursus.png" alt="">
+<img src="images/jsonfs-kursus.png" alt="">
 
 
 
@@ -66,11 +66,11 @@ Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 ## Getting Started
 Install the module locally :
 ```bash
-$ npm install JSONFS
+$ npm install jsonfs
 ```
 
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db = db.connect('/path/to/db-folder', ['collection-name']);
 // you can access the traditional JSON DB methods here
 ```
@@ -80,24 +80,24 @@ db = db.connect('/path/to/db-folder', ['collection-name']);
 ```js
 db.connect(pathToFolder, ['filename']);
 ```
-Filename will be the name of the JSON file. You can omit the extension, JSONFS will take care of it for you.
+Filename will be the name of the JSON file. You can omit the extension, jsonfs will take care of it for you.
 
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db = db.connect('/demos/db', ['articles']);
 // or simply
 db.connect('/demos/db', ['articles']);
 ```
 
-This will check for a directory at given path, if it does not exits, JSONFS will throw an error and exit.
+This will check for a directory at given path, if it does not exits, jsonfs will throw an error and exit.
 
-If the directory exists but the file/collection does not exist, JSONFS will create it for you.
+If the directory exists but the file/collection does not exist, jsonfs will create it for you.
 
 ### Load Collections
 Alternatively you can also load collections like
 
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 // this
 db = db.connect('/demos/db');
 db.loadCollections(['articles']);
@@ -113,7 +113,7 @@ db.connect('/demos/db', ['articles']);
 #### Load Multiple Collections
 
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles','comments','users']);
 ```
 
@@ -129,10 +129,10 @@ db.[collectionName].[methodname]
 ```
 To save the data, you can use
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('db', ['articles']);
 var article = {
-    title : "JSONFS works",
+    title : "jsonfs works",
     published : "today",
     rating : "5 stars"
 }
@@ -144,7 +144,7 @@ The saved data will be
 ```js
 [
     {
-        "title": "JSONFS works",
+        "title": "jsonfs works",
         "published": "today",
         "rating": "5 stars",
         "_id": "0f6047c6c69149f0be0c8f5943be91be"
@@ -154,22 +154,22 @@ The saved data will be
 You can also save multiple objects at once like
 
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('db', ['articles']);
 var article1 = {
-    title : 'JSONFS works',
+    title : 'jsonfs works',
     published : 'today',
     rating : '5 stars'
 }
 
 var article2 = {
-    title : 'JSONFS works',
+    title : 'jsonfs works',
     published : 'yesterday',
     rating : '5 stars'
 }
 
 var article3 = {
-    title : 'JSONFS works',
+    title : 'jsonfs works',
     published : 'today',
     rating : '4 stars'
 }
@@ -178,15 +178,15 @@ db.articles.save([article1, article2, article3]);
 And this will return the inserted objects
 
 ```js
-[ { title: 'JSONFS works',
+[ { title: 'jsonfs works',
     published: 'today',
     rating: '4 stars',
     _id: 'b1cdbb3525b84e8c822fc78896d0ca7b' },
-  { title: 'JSONFS works',
+  { title: 'jsonfs works',
     published: 'yesterday',
     rating: '5 stars',
     _id: '42997c62e1714e9f9d88bf3b87901f3b' },
-  { title: 'JSONFS works',
+  { title: 'jsonfs works',
     published: 'today',
     rating: '5 stars',
     _id: '4ca1c1597ddc4020bc41b4418e7a568e' } ]
@@ -200,14 +200,14 @@ There are 2 methods available for reading the JSON collection
 
 #### db.collectioName.find()
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 db.articles.find();
 ```
 This will return all the records
 ```js
 [{
-    title: 'JSONFS works',
+    title: 'jsonfs works',
     published: 'today',
     rating: '5 stars',
     _id: '0f6047c6c69149f0be0c8f5943be91be'
@@ -215,7 +215,7 @@ This will return all the records
 ```
 You can also query with a criteria like
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 db.articles.find({rating : "5 stars"});
 ```
@@ -223,15 +223,15 @@ This will return all the articles which have a rating of 5.
 
 #### db.collectioName.findOne(query)
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 db.articles.findOne();
 ```
 
-If you do not pass a query, JSONFS will return the first article in the collection. If you pass a query, it will return first article in the filtered data
+If you do not pass a query, jsonfs will return the first article in the collection. If you pass a query, it will return first article in the filtered data
 
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 db.articles.findOne({_id: '0f6047c6c69149f0be0c8f5943be91be'});
 ```
@@ -249,15 +249,15 @@ options = {
 ```
 Usage
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 
 var query = {
-  title : 'JSONFS works'
+  title : 'jsonfs works'
 };
 
 var dataToBeUpdate = {
-  title : 'JSONFS works again!',
+  title : 'jsonfs works again!',
 };
 
 var options = {
@@ -276,24 +276,24 @@ db.collectioName.remove(query, multi);
 You can remove the entire collection (including the file) or you can remove the matched objects by passing in a query. When you pass a query, you can either delete all the matched objects or only the first one by passing `multi` as `false`. The default value of `multi` is `true`.
 
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 db.articles.remove({rating : "5 stars"});
 ```
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 db.articles.remove({rating : "5 stars"}, true); // remove all matched. Default - multi = true
 ```
 
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 db.articles.remove({rating : "5 stars"}, false); // remove only the first match
 ```
 Using remove without any params will delete the file and will remove the db instance.
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 db.articles.remove();
 ```
@@ -305,7 +305,7 @@ db.collectioName.count();
 ```
 Will return the count of objects in the Collection
 ```js
-var db = require('JSONFS');
+var db = require('jsonfs');
 db.connect('/demos/db', ['articles']);
 db.articles.count(); // will give the count
 ```
@@ -314,7 +314,7 @@ db.articles.count(); // will give the count
 Refer to the [demos](demos) folder.
 
 ## Performance
-To validate JSONFS's performance and to check if it meets your needs, you can clone this repo and run
+To validate jsonfs's performance and to check if it meets your needs, you can clone this repo and run
 
 ```bash
 $ node performance/time.js
