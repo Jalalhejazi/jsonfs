@@ -1,6 +1,6 @@
 {
-  "name": "jsonfs",
-  "version": "0.0.1",
+  "name": "json_file_system",
+  "version": "0.1.2",
   "main": "lib/jsonfs.js",
   "description": "FileSystem JSON Database API ",
   "homepage": "http://jalalhejazi.github.io/jsonfs",

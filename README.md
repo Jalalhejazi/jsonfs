@@ -4,40 +4,40 @@ Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 <br>
 ### db.collection.save()
 
-<img src="images/db.save.png" alt="">
+<img src="https://github.com/Jalalhejazi/jsonfs/images/db.save.png" alt="">
 
 <br>
 ### db.collection.findOne()
-<img src="images/db.findOne.png" alt="">
+<img src="https://github.com/Jalalhejazi/jsonfs/images/db.findOne.png" alt="">
 
 
 <br>
 ### db.collection.find({})
-<img src="images/db.find.png" alt="">
+<img src="https://github.com/Jalalhejazi/jsonfs/images/db.find.png" alt="">
 
 
 <br>
 ### db.collection.update({})
-<img src="images/db.update.png" alt="">
+<img src="https://github.com/Jalalhejazi/jsonfs/images/db.update.png" alt="">
 
 <br>
 ### db.collection.remove({})
-<img src="images/db.remove.png" alt="">
+<img src="https://github.com/Jalalhejazi/jsonfs/images/db.remove.png" alt="">
 
 <br>
 ### db.kursus
-<img src="images/jsonfs-kursus.png" alt="">
+<img src="https://github.com/Jalalhejazi/jsonfs/images/jsonfs-kursus.png" alt="">
 
 
 
 <br>
 ### node try.js
-<img src="images/try.png" alt="">
+<img src="https://github.com/Jalalhejazi/jsonfs/images/try.png" alt="">
 
 
 <br>
 ### collection.js (Data Access Layer)
-<img src="images/collection.js.png" alt="">
+<img src="https://github.com/Jalalhejazi/jsonfs/images/collection.js.png" alt="">
 
 
 
@@ -66,7 +66,7 @@ Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 ## Getting Started
 Install the module locally :
 ```bash
-$ npm install jsonfs
+$ git clone https://github.com/Jalalhejazi/jsonfs.git
 ```
 
 ```js
