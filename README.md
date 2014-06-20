@@ -64,9 +64,14 @@ Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 * [Release History](#release-history)
 
 ## Getting Started
-Install the module locally :
+clone the source code locally :
 ```bash
 $ git clone https://github.com/Jalalhejazi/jsonfs.git
+```
+
+Install the module locally :
+```bash
+$ npm install json_file_system
 ```
 
 ```js
