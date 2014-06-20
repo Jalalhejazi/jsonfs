@@ -26,8 +26,8 @@ Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 
 <br>
 ### db.kursus
-<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/jsonfs-kursus.png" alt="">
-
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/kursus.png" alt="">
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/kursus1.png" alt="">
 
 
 <br>
