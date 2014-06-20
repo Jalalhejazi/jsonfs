@@ -1,0 +1,45 @@
+{
+  "name": "JSONFS",
+  "version": "0.0.1",
+  "main": "lib/JSONFS.js",
+  "description": "FileSystem JSON Database API ",
+  "homepage": "http://jalalhejazi.github.io/JSONFS",
+  "bugs": "https://github.com/jalalhejazi/JSONFS/issues",
+  "author": {
+    "name": "Jalal Hejazi",
+    "email": "Jalal.Hejazi@gmail.com",
+    "url": "http://about_node.itacademy.dk/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jalalhejazi/JSONFS"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "JSONFS",
+    "JSON",
+    "Database",
+    "file system",
+    "CRUD",
+    "mongodb"
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1",
+    "jshint-stylish": "^0.2.0"
+  },
+  "dependencies": {
+    "node-uuid": "^1.4.1",
+    "merge": "^1.1.3",
+    "chalk": "^0.4.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}
