@@ -41,6 +41,10 @@ Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 <img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/collection.js.png" alt="">
 
 
+<br>
+### node console> 
+<img src="https://raw.githubusercontent.com/Jalalhejazi/jsonfs/master/images/console.png" alt="">
+
 
 ## Inspirations and Credits
 
