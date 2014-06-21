@@ -12,6 +12,10 @@
     "type": "git",
     "url": "https://github.com/jalalhejazi/jsonfs"
   },
+ "preferGlobal":"true",
+ "bin": {
+    "json_file_system":"lib/jsonfs.js"
+  },
   "license": "MIT",
   "files": [
     "lib"
