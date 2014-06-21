@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+var db=require('json_file_system');
+
