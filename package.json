@@ -1,6 +1,6 @@
 {
   "name": "json_file_system",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "main": "lib/jsonfs.js",
   "description": "FileSystem JSON Database API ",
   "homepage": "http://jalalhejazi.github.io/jsonfs",
@@ -12,9 +12,9 @@
     "type": "git",
     "url": "https://github.com/jalalhejazi/jsonfs"
   },
- "preferGlobal":"true",
- "bin": {
-    "json_file_system":"lib/jsonfs.js"
+  "preferGlobal": "true",
+  "bin": {
+    "json_file_system": "lib/jsonfs.js"
   },
   "license": "MIT",
   "files": [
