@@ -1,26 +1,22 @@
 {
-  "name": "json_file_system",
-  "version": "0.1.6",
+  "name": "@webgap/jsonfs",
+  "version": "0.1.7",
   "main": "lib/jsonfs.js",
   "description": "FileSystem JSON Database API ",
-  "homepage": "http://jalalhejazi.github.io/jsonfs",
   "bugs": {
-    "url": "https://github.com/jalalhejazi/jsonfs/issues"
+    "url": "https://github.com/webgap/jsonfs/issues"
   },
   "author": "Jalal Hejazi <Jalal.Hejazi@gmail.com> (http://about_node.itacademy.dk/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jalalhejazi/jsonfs"
-  },
-  "preferGlobal": "true",
-  "bin": {
-    "json_file_system": "lib/jsonfs.js"
+    "url": "https://github.com/webgap/jsonfs"
   },
   "license": "MIT",
   "files": [
     "lib"
   ],
   "keywords": [
+    "webgap",
     "jsonfs",
     "JSON",
     "Database",
