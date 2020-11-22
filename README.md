@@ -1,3 +1,6 @@
+# json_file_system
+Fork for using with WebGAP.
+
 # json_file_system (JSON FileDB like MongoDB)
 Nodejs JSON Database like MongoDB, but only using the FileSystem (File IO).
 
